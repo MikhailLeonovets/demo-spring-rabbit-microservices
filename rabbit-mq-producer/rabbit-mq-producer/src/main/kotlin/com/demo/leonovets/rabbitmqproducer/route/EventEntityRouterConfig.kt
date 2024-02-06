@@ -18,7 +18,7 @@ import org.springframework.web.reactive.function.server.ServerResponse
  * @since 01/2024
  */
 @Configuration
-class EventEntityRouter {
+class EventEntityRouterConfig {
     @Bean
     fun eventEntityHandler(eventEntityService: EventEntityService): EventEntityHandler {
         return DefaultEventEntityHandler(eventEntityService)

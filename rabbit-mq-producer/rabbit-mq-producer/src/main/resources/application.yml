@@ -1,1 +1,9 @@
-
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: mongoadmin
+      password: bdung
+      authentication-database: admin
+      database: default_db

@@ -1,6 +1,6 @@
 package com.demo.leonovets.rabbitmqproducer.repository.entity
 
-import org.springframework.data.annotation.Id
+import org.bson.types.ObjectId
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
 
@@ -9,10 +9,10 @@ import java.time.LocalDateTime
  * @author Mikhail.Leonovets
  * @since 01/2024
  */
-@Document(collection = "event-entity-db")
+@Document(collection = "event-entity")
 data class EventEntity(
-    @Id private val id: String?,
+    override val id: ObjectId = ObjectId(),
     val message: String,
-    var createdAt: LocalDateTime?,
-    var deletedAt: LocalDateTime?
+    override var createdAt: LocalDateTime?,
+    override var deletedAt: LocalDateTime?
 ) : Entity(id, createdAt, deletedAt)
